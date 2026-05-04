@@ -51,7 +51,6 @@ window.addEventListener('scroll', () => {
     navbar.classList.add('visible');
     scrollHint.classList.add('hidden');
     brandName.classList.add('scrolled');
-
   }
 }, { passive: true });
 
@@ -108,6 +107,19 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   window.addEventListener('resize', resize);
   draw();
 })();
+
+// ── BRAND NAME FADE ON SECTION CHANGE ───────────────
+window.addEventListener('scroll', () => {
+  const homeSection = document.getElementById('home');
+  const homeBottom = homeSection.getBoundingClientRect().bottom;
+  if (homeBottom <= 0) {
+    brandName.style.opacity = '0';
+    brandName.style.pointerEvents = 'none';
+  } else {
+    brandName.style.opacity = '1';
+    brandName.style.pointerEvents = 'all';
+  }
+}, { passive: true });
 
 // ── ABOUT LETTER ANIMATION ───────────────────────────
 const aboutLetters = document.querySelectorAll('.about-letter');
