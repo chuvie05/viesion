@@ -2,8 +2,8 @@
 
 :root {
   --black:     #0a0a0a;
-  --red:       #C0392B;
-  --red-light: #E74C3C;
+  --red:       #951919;
+  --red-light: #C0392B;
   --blue:      #2E86C1;
   --blue-light:#5DADE2;
   --white:     #F5F5F5;
@@ -592,14 +592,14 @@ footer {
   position: absolute;
   width: 24px;
   height: 24px;
-  border-color: var(--blue-light);
+  border-color: #064de7;
   border-style: solid;
 }
 
-.corner.tl { top: 12px; left: 12px; border-width: 3px 0 0 3px; }
-.corner.tr { top: 12px; right: 12px; border-width: 3px 3px 0 0; }
-.corner.bl { bottom: 12px; left: 12px; border-width: 0 0 3px 3px; }
-.corner.br { bottom: 12px; right: 12px; border-width: 0 3px 3px 0; }
+.corner.tl { top: 12px; left: 12px; border-width: 5px 0 0 5px; }
+.corner.tr { top: 12px; right: 12px; border-width: 5px 5px 0 0; }
+.corner.bl { bottom: 12px; left: 12px; border-width: 0 0 5px 5px; }
+.corner.br { bottom: 12px; right: 12px; border-width: 0 5px 5px 0; }
 
 /* Card image */
 .card-img-wrap {
@@ -700,8 +700,8 @@ footer {
 }
 
 .contact-email:hover {
-  color: #1041c6 !important;
-  border-color: #1041c6 !important;
+  color: #5DADE2 !important;
+  border-color: #5DADE2 !important;
 }
 
 .contact-links {
@@ -731,7 +731,7 @@ footer {
 }
 
 .contact-icon:hover {
-  color: #1041c6 !important;
+  color: #5DADE2 !important;
 }
 
 footer {

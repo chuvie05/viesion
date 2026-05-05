@@ -88,7 +88,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
         const alpha = t * 1;
         ctx.beginPath();
         ctx.arc(x, y, DOT_RADIUS, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(192, 57, 43, ${alpha})`;
+        ctx.fillStyle = `rgba(149, 25, 25, ${alpha})`;
         ctx.fill();
       }
     }
@@ -164,7 +164,7 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
         card.style.display = 'flex';
       } else if (filter === 'highlight') {
         card.style.display = card.dataset.highlight ? 'flex' : 'none';
-      } else if (card.dataset.category === filter) {
+      } else if (card.dataset.category && card.dataset.category.includes(filter)) {
         card.style.display = 'flex';
       } else {
         card.style.display = 'none';
