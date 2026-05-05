@@ -136,3 +136,39 @@ const observer = new IntersectionObserver((entries) => {
 
 const aboutSection = document.getElementById('about');
 if (aboutSection) observer.observe(aboutSection);
+
+// ── WORKS TITLE ANIMATION ─────────────────────────────
+const worksLetters = document.querySelectorAll('.works-letter');
+const worksSection = document.getElementById('works');
+
+const worksObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      worksLetters.forEach(l => l.classList.add('visible'));
+    } else {
+      worksLetters.forEach(l => l.classList.remove('visible'));
+    }
+  });
+}, { threshold: 0.2 });
+
+if (worksSection) worksObserver.observe(worksSection);
+
+// ── WORKS FILTER ──────────────────────────────────────
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.work-card').forEach(card => {
+      if (filter === 'all') {
+        card.style.display = 'flex';
+      } else if (filter === 'highlight') {
+        card.style.display = card.dataset.highlight ? 'flex' : 'none';
+      } else if (card.dataset.category === filter) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});

@@ -356,7 +356,7 @@ footer {
 
 /* ABOUT SECTION OVERRIDE */
 #about {
-  align-items: flex-start !important;
+  align-items: center !important;
   padding-top: 0rem !important;
 }
 
@@ -464,4 +464,283 @@ footer {
 .tag:hover {
   border-color: var(--red);
   color: var(--red-light);
+}
+
+/* ── WORKS SECTION ───────────────────────────────────── */
+.works-section {
+  min-height: 100vh;
+  padding: 5rem 3rem 8rem;
+  border-top: 1px solid rgba(192,57,43,0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* WORKS TITLE */
+.works-title {
+  display: flex;
+  justify-content: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 3rem;
+}
+
+.works-letter {
+  display: inline-block;
+  opacity: 0;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.7s ease;
+  transition-delay: calc(var(--i) * 0.06s);
+}
+
+.works-letter.from-left  { transform: translateX(-150vw); }
+.works-letter.from-right { transform: translateX(150vw); }
+
+.works-letter.from-left.visible,
+.works-letter.from-right.visible {
+  transform: translateX(0) !important;
+  opacity: 1;
+}
+
+/* FILTER BAR */
+.works-filter {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: var(--red);
+  border-radius: 50px;
+  padding: 6px;
+  margin-bottom: 4rem;
+}
+
+.filter-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255,255,255,0.7);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.5rem 1.3rem;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+.filter-btn:hover {
+  color: var(--white);
+}
+
+.filter-btn.active {
+  background: rgba(0,0,0,0.3);
+  color: var(--white);
+}
+
+/* WORKS GRID */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* ── WORK CARDS ──────────────────────────────────────── */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.work-card {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  background: var(--red);
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none;
+  min-height: 220px;
+  transition: background 0.4s ease;
+  cursor: pointer;
+}
+
+.work-card:hover {
+  background: transparent;
+}
+
+/* Camera frame corners — hidden by default, show on hover */
+.card-frame {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.work-card:hover .card-frame {
+  opacity: 1;
+}
+
+.corner {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-color: var(--blue-light);
+  border-style: solid;
+}
+
+.corner.tl { top: 12px; left: 12px; border-width: 3px 0 0 3px; }
+.corner.tr { top: 12px; right: 12px; border-width: 3px 3px 0 0; }
+.corner.bl { bottom: 12px; left: 12px; border-width: 0 0 3px 3px; }
+.corner.br { bottom: 12px; right: 12px; border-width: 0 3px 3px 0; }
+
+/* Card image */
+.card-img-wrap {
+  width: 280px;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: rgba(0,0,0,0.2);
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Card info */
+.card-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.card-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  color: var(--white);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.card-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.6;
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.card-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: 20px;
+  padding: 0.25rem 0.8rem;
+}
+
+/* ── CONTACT SECTION ─────────────────────────────────── */
+.contact-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid rgba(192,57,43,0.15);
+  padding: 6rem 3rem;
+  text-align: center;
+}
+
+.contact-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 8vw, 7rem);
+  color: var(--white);
+  letter-spacing: 0.03em;
+  margin-bottom: 1rem;
+  text-align: center;
+  width: 100%;
+}
+
+.contact-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: var(--grey);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
+.contact-email {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.6rem);
+  color: var(--white);
+  text-decoration: none;
+  border-bottom: 1px solid var(--red);
+  padding-bottom: 4px;
+  transition: color 0.2s, border-color 0.2s;
+  margin-bottom: 3rem;
+}
+
+.contact-email:hover {
+  color: #1041c6 !important;
+  border-color: #1041c6 !important;
+}
+
+.contact-links {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.contact-links a {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: var(--grey);
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+.contact-links a:hover {
+  color: var(--white);
+}
+
+.contact-icon {
+  color: var(--grey);
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.contact-icon:hover {
+  color: #1041c6 !important;
+}
+
+footer {
+  padding: 1.5rem 3rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  text-align: center;
+}
+
+footer .footer-copy {
+  font-size: 0.72rem;
+  color: var(--grey);
 }

@@ -32,6 +32,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#works">Works</a></li>
         <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </div>
@@ -85,10 +86,122 @@
   </section>
 
   <!-- WORKS -->
-  <section id="works" class="section-wrap">
-    <div class="placeholder-inner">
-      <p class="section-label">My Works</p>
-      <h2 class="section-title">Coming soon</h2>
+  <section id="works" class="works-section">
+    <h2 class="works-title">
+      <span class="works-letter from-left" style="--i:0">M</span>
+      <span class="works-letter from-left" style="--i:1">Y</span>
+      <span class="works-letter" style="--i:2">&nbsp;</span>
+      <span class="works-letter from-left" style="--i:3">W</span>
+      <span class="works-letter from-right" style="--i:4">O</span>
+      <span class="works-letter from-right" style="--i:5">R</span>
+      <span class="works-letter from-right" style="--i:6">K</span>
+      <span class="works-letter from-right" style="--i:7">S</span>
+    </h2>
+    <div class="works-filter">
+      <button class="filter-btn active" data-filter="highlight">Highlight</button>
+      <button class="filter-btn" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="illustration">Illustration</button>
+      <button class="filter-btn" data-filter="graphic-design">Graphic Design</button>
+      <button class="filter-btn" data-filter="uiux">UI/UX</button>
+      <button class="filter-btn" data-filter="others">Others</button>
+    </div>
+    <div class="works-grid" id="worksGrid">
+
+      <a href="works/project1.html" class="work-card" data-category="illustration" data-highlight="true">
+        <div class="card-img-wrap">
+          <img src="works/project1-cover.png" alt="Project 1" class="card-img" />
+        </div>
+        <div class="card-info">
+          <h3 class="card-title">Project Title</h3>
+          <p class="card-desc">Short description of the project goes here.</p>
+          <div class="card-tags">
+            <span class="card-tag">Illustration</span>
+          </div>
+        </div>
+        <div class="card-frame">
+          <span class="corner tl"></span>
+          <span class="corner tr"></span>
+          <span class="corner bl"></span>
+          <span class="corner br"></span>
+        </div>
+      </a>
+
+      <a href="works/project2.html" class="work-card" data-category="uiux" data-highlight="true">
+        <div class="card-img-wrap">
+          <img src="works/project2-cover.png" alt="Project 2" class="card-img" />
+        </div>
+        <div class="card-info">
+          <h3 class="card-title">Project Title</h3>
+          <p class="card-desc">Short description of the project goes here.</p>
+          <div class="card-tags">
+            <span class="card-tag">UI/UX</span>
+          </div>
+        </div>
+        <div class="card-frame">
+          <span class="corner tl"></span>
+          <span class="corner tr"></span>
+          <span class="corner bl"></span>
+          <span class="corner br"></span>
+        </div>
+      </a>
+
+      <a href="works/project3.html" class="work-card" data-category="graphic-design">
+        <div class="card-img-wrap">
+          <img src="works/project3-cover.png" alt="Project 3" class="card-img" />
+        </div>
+        <div class="card-info">
+          <h3 class="card-title">Project Title</h3>
+          <p class="card-desc">Short description of the project goes here.</p>
+          <div class="card-tags">
+            <span class="card-tag">Graphic Design</span>
+          </div>
+        </div>
+        <div class="card-frame">
+          <span class="corner tl"></span>
+          <span class="corner tr"></span>
+          <span class="corner bl"></span>
+          <span class="corner br"></span>
+        </div>
+      </a>
+
+      <a href="works/project4.html" class="work-card" data-category="illustration">
+        <div class="card-img-wrap">
+          <img src="works/project4-cover.png" alt="Project 4" class="card-img" />
+        </div>
+        <div class="card-info">
+          <h3 class="card-title">Project Title</h3>
+          <p class="card-desc">Short description of the project goes here.</p>
+          <div class="card-tags">
+            <span class="card-tag">Illustration</span>
+          </div>
+        </div>
+        <div class="card-frame">
+          <span class="corner tl"></span>
+          <span class="corner tr"></span>
+          <span class="corner bl"></span>
+          <span class="corner br"></span>
+        </div>
+      </a>
+
+      <a href="works/project5.html" class="work-card" data-category="others">
+        <div class="card-img-wrap">
+          <img src="works/project5-cover.png" alt="Project 5" class="card-img" />
+        </div>
+        <div class="card-info">
+          <h3 class="card-title">Project Title</h3>
+          <p class="card-desc">Short description of the project goes here.</p>
+          <div class="card-tags">
+            <span class="card-tag">Others</span>
+          </div>
+        </div>
+        <div class="card-frame">
+          <span class="corner tl"></span>
+          <span class="corner tr"></span>
+          <span class="corner bl"></span>
+          <span class="corner br"></span>
+        </div>
+      </a>
+
     </div>
   </section>
 
@@ -100,15 +213,28 @@
     </div>
   </section>
 
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+    <h2 class="contact-title">Let's Work Together</h2>
+    <p class="contact-sub">Open for freelance opportunities worldwide</p>
+    <a href="mailto:vietopiaa@gmail.com" class="contact-email">vietopiaa@gmail.com</a>
+    <div class="contact-links">
+      <a href="https://www.instagram.com/viesion_lab?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="contact-icon" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+        </svg>
+      </a>
+      <a href="https://www.linkedin.com/in/ngoc-truc-vy-vo-0a9152398" target="_blank" class="contact-icon" aria-label="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer>
-    <div class="footer-name">Viesion</div>
-    <div class="footer-copy">© 2025 Vo Ngoc Truc Vy</div>
-    <div class="footer-links">
-      <a href="#">Instagram</a>
-      <a href="#">Behance</a>
-      <a href="#">ArtStation</a>
-    </div>
+    <div class="footer-copy">© 2025 Viesion — Vo Ngoc Truc Vy. All rights reserved.</div>
   </footer>
 
   <script src="script.js"></script>
