@@ -37,12 +37,10 @@ function stopCycling() {
   clearInterval(cycleTimer);
 }
 
-// Start right away
 window.onload = function() {
   startCycling();
 };
 
-// On first scroll
 window.addEventListener('scroll', () => {
   if (!hasScrolled && window.scrollY > 10) {
     hasScrolled = true;
@@ -54,7 +52,6 @@ window.addEventListener('scroll', () => {
   }
 }, { passive: true });
 
-// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
@@ -63,7 +60,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
-// ── POLKA DOT SPOTLIGHT ──────────────────────────────────
+// POLKA DOT SPOTLIGHT
 (function() {
   const home = document.getElementById('home');
   const canvas = document.getElementById('polka-canvas');
@@ -108,7 +105,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   draw();
 })();
 
-// ── BRAND NAME FADE ON SECTION CHANGE ───────────────
+// BRAND NAME FADE
 window.addEventListener('scroll', () => {
   const homeSection = document.getElementById('home');
   const homeBottom = homeSection.getBoundingClientRect().bottom;
@@ -121,7 +118,7 @@ window.addEventListener('scroll', () => {
   }
 }, { passive: true });
 
-// ── ABOUT LETTER ANIMATION ───────────────────────────
+// ABOUT LETTER ANIMATION
 const aboutLetters = document.querySelectorAll('.about-letter');
 
 const observer = new IntersectionObserver((entries) => {
@@ -137,7 +134,7 @@ const observer = new IntersectionObserver((entries) => {
 const aboutSection = document.getElementById('about');
 if (aboutSection) observer.observe(aboutSection);
 
-// ── WORKS TITLE ANIMATION ─────────────────────────────
+// WORKS TITLE ANIMATION
 const worksLetters = document.querySelectorAll('.works-letter');
 const worksSection = document.getElementById('works');
 
@@ -153,7 +150,7 @@ const worksObserver = new IntersectionObserver((entries) => {
 
 if (worksSection) worksObserver.observe(worksSection);
 
-// ── WORKS FILTER ──────────────────────────────────────
+// WORKS FILTER
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -163,7 +160,7 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
       if (filter === 'all') {
         card.style.display = 'flex';
       } else if (filter === 'highlight') {
-        card.style.display = card.dataset.highlight ? 'flex' : 'none';
+        card.style.display = card.dataset.highlight === 'true' ? 'flex' : 'none';
       } else if (card.dataset.category && card.dataset.category.includes(filter)) {
         card.style.display = 'flex';
       } else {
