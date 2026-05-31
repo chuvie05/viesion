@@ -39,6 +39,10 @@ function stopCycling() {
 
 window.onload = function() {
   startCycling();
+  // Show only highlight cards on load
+  document.querySelectorAll('.work-card').forEach(card => {
+    card.style.display = card.dataset.highlight === 'true' ? 'flex' : 'none';
+  });
 };
 
 window.addEventListener('scroll', () => {
@@ -120,7 +124,6 @@ window.addEventListener('scroll', () => {
 
 // ABOUT LETTER ANIMATION
 const aboutLetters = document.querySelectorAll('.about-letter');
-
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -137,7 +140,6 @@ if (aboutSection) observer.observe(aboutSection);
 // WORKS TITLE ANIMATION
 const worksLetters = document.querySelectorAll('.works-letter');
 const worksSection = document.getElementById('works');
-
 const worksObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
