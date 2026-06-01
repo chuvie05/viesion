@@ -206,7 +206,7 @@ nav.visible {
 /* SCROLL HINT */
 .scroll-hint {
   position: absolute;
-  bottom: 2rem;
+  bottom: 3rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
@@ -428,7 +428,7 @@ footer {
   font-size: 0.95rem;
   color: var(--grey);
   line-height: 1.8;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .about-tags-section {
@@ -802,10 +802,10 @@ footer .footer-copy {
 
 .contact-bottom {
   background: var(--red);
-  padding: 2.5rem 4rem;
+  padding: 2.5rem 4rem 1.5rem;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
   width: 100%;
   gap: 1rem;
@@ -874,7 +874,7 @@ footer .footer-copy {
 /* SCROLL TO TOP */
 #scrollTop {
   position: fixed;
-  bottom: 2rem;
+  bottom: 3rem;
   right: 2rem;
   width: 44px;
   height: 44px;
@@ -898,4 +898,4 @@ footer .footer-copy {
   pointer-events: all;
 }
 
-#scrollTop:hover { background: #8b1111; }
+#scrollTop:hover { background: var(--black); }
