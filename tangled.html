@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tangled — Viesion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --red: #951919;
+      --red-light: #C0392B;
+      --white: #F5F5F5;
+      --grey: #888888;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+    }
+
+    .project-page {
+      max-width: 100%;
+      padding: 5rem 8vw 6rem;
+    }
+
+    .back-btn {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      color: var(--grey);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+      transition: color 0.2s;
+    }
+    .back-btn:hover { color: var(--red-light); }
+
+    .project-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(4rem, 10vw, 8rem);
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 2rem;
+    }
+
+    .project-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      color: var(--grey);
+      line-height: 1.8;
+      max-width: 700px;
+      margin-bottom: 2.5rem;
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 3rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .meta-group { display: flex; flex-direction: column; gap: 0.6rem; }
+
+    .meta-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--red-light);
+      margin-bottom: 0.4rem;
+    }
+
+    .meta-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+    .tag {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 0.3rem 0.9rem;
+    }
+
+    .prototype-btn {
+      display: inline-block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--red);
+      padding: 0.8rem 2rem;
+      border-radius: 40px;
+      text-decoration: none;
+      margin-bottom: 4rem;
+      transition: background 0.2s;
+    }
+    .prototype-btn:hover { background: var(--red-light); }
+
+    .case-study-section { margin-top: 1rem; }
+
+    .pdf-container {
+      position: relative;
+      width: 100%;
+      height: 600px;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 1rem;
+    }
+
+    .pdf-frame { width: 100%; height: 100%; border: none; }
+
+    .zoom-btn {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      background: var(--red);
+      color: var(--white);
+      border: none;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .zoom-btn:hover { background: var(--red-light); }
+
+    .zoom-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      z-index: 200;
+    }
+    .zoom-overlay.active { display: block; }
+
+    .zoom-window {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80vw;
+      height: 85vh;
+      background: var(--black);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      overflow: hidden;
+      z-index: 201;
+      flex-direction: column;
+    }
+    .zoom-window.active { display: flex; }
+
+    .unzoom-btn {
+      background: var(--red);
+      color: var(--white);
+      border: none;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.6rem 1.2rem;
+      cursor: pointer;
+      align-self: flex-end;
+      margin: 0.8rem 0.8rem 0 0;
+      border-radius: 20px;
+      flex-shrink: 0;
+      transition: background 0.2s;
+    }
+    .unzoom-btn:hover { background: var(--red-light); }
+
+    .pdf-frame-zoom { width: 100%; flex: 1; border: none; }
+  </style>
+</head>
+<body>
+
+  <main class="project-page">
+
+    <a href="index.html#works" class="back-btn">← Back to Works</a>
+
+    <h1 class="project-title">Tangled</h1>
+    <p class="project-desc">A hair-care companion app for those who love experimenting with new hairstyles but struggle with maintaining healthy hair. Tangled personalises the hair-care journey with tailored routines and product recommendations based on individual hair types and goals.</p>
+
+    <div class="project-meta">
+      <div class="meta-group">
+        <p class="meta-label">Skills</p>
+        <div class="meta-tags"><span class="tag">UI/UX</span><span class="tag">Graphic Design</span></div>
+      </div>
+      <div class="meta-group">
+        <p class="meta-label">Tools</p>
+        <div class="meta-tags">
+          <span class="tag">Figma</span>
+          <span class="tag">Adobe Illustrator</span>
+        </div>
+      </div>
+    </div>
+
+    <a href="https://www.figma.com/proto/airWGqjIjsG1dX9JWUnIc7/Tangled?node-id=89-2157&t=YaL3li38DJQ7eteM-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=68%3A322" target="_blank" class="prototype-btn">View Prototype →</a>
+
+    <div class="case-study-section">
+      <p class="meta-label">Case Study</p>
+      <div class="pdf-container">
+        <object data="pdf/Tangled.pdf" type="application/pdf" class="pdf-frame"><p style="color:#888;padding:1rem">PDF preview not available. <a href="pdf/Tangled.pdf" target="_blank" style="color:#C0392B">Open PDF</a></p></object>
+        <button class="zoom-btn" onclick="openZoom()">⤢ Expand</button>
+      </div>
+    </div>
+
+  </main>
+
+  <div class="zoom-overlay" id="zoomOverlay" onclick="closeZoom()"></div>
+  <div class="zoom-window" id="zoomWindow">
+    <button class="unzoom-btn" onclick="closeZoom()">✕ Close</button>
+    <object data="pdf/Tangled.pdf" type="application/pdf" class="pdf-frame-zoom"><p style="color:#888;padding:1rem">PDF preview not available. <a href="pdf/Tangled.pdf" target="_blank" style="color:#C0392B">Open PDF</a></p></object>
+  </div>
+
+  <script>
+    function openZoom() {
+      document.getElementById('zoomOverlay').classList.add('active');
+      document.getElementById('zoomWindow').classList.add('active');
+    }
+    function closeZoom() {
+      document.getElementById('zoomOverlay').classList.remove('active');
+      document.getElementById('zoomWindow').classList.remove('active');
+    }
+  </script>
+
+</body>
+</html>
