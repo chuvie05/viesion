@@ -9,41 +9,51 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --black: #0a0a0a; --red: #951919; --red-light: #C0392B;
-      --white: #F5F5F5; --grey: #888888;
-    }
+    :root { --black: #0a0a0a; --red: #951919; --red-light: #C0392B; --white: #F5F5F5; --grey: #888888; }
     body { background: var(--black); color: var(--white); font-family: 'Inter', sans-serif; }
     .project-page { max-width: 100%; padding: 5rem 8vw 6rem; }
     .back-btn { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.8rem; color: var(--grey); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 3rem; transition: color 0.2s; }
     .back-btn:hover { color: var(--red-light); }
     .project-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(4rem, 10vw, 8rem); color: var(--white); line-height: 1; margin-bottom: 2rem; }
     .project-desc { font-family: 'Inter', sans-serif; font-size: 1rem; color: var(--grey); line-height: 1.8; max-width: 700px; margin-bottom: 2.5rem; }
-    .project-meta { display: flex; gap: 3rem; margin-bottom: 2.5rem; flex-wrap: wrap; }
+    .project-meta { display: flex; gap: 3rem; margin-bottom: 4rem; flex-wrap: wrap; }
     .meta-group { display: flex; flex-direction: column; gap: 0.6rem; }
     .meta-label { font-family: 'Inter', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--red-light); margin-bottom: 0.4rem; }
     .meta-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
     .tag { font-family: 'Inter', sans-serif; font-size: 0.8rem; color: var(--white); border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 0.3rem 0.9rem; }
-    .prototype-btn { display: inline-block; font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white); background: var(--red); padding: 0.8rem 2rem; border-radius: 40px; text-decoration: none; transition: background 0.2s; }
-    .prototype-btn:hover { background: var(--red-light); }
+    .section { margin-bottom: 5rem; }
+    .section-title { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--white); margin-bottom: 1.5rem; border-bottom: 1px solid rgba(149,25,25,0.4); padding-bottom: 0.8rem; }
+    .section-img { width: 65%; border-radius: 8px; display: block; margin: 0 auto; }
   </style>
 </head>
 <body>
   <main class="project-page">
+
     <a href="index.html#works" class="back-btn">← Back to Works</a>
+
     <h1 class="project-title">Breath</h1>
-    <p class="project-desc">A concept poster for a fashion game set in a possible future, where positive behaviour on social media unlocks progress in the game. The project explores how to make people more conscious of the impact of their words online — especially toward women. Illustrated in Clip Studio Paint.</p>
+    <p class="project-desc">A concept poster created in 2nd year for an imaginary fashion game set in a possible future, where positive behaviour on social media unlocks progress in the game. The project explores how to make people more conscious of the impact of their words online — especially toward women — through interactive design and visual storytelling. Illustrated in Clip Studio Paint.</p>
+
     <div class="project-meta">
       <div class="meta-group">
         <p class="meta-label">Skills</p>
-        <div class="meta-tags"><span class="tag">Illustration</span></div>
+        <div class="meta-tags">
+          <span class="tag">Illustration</span>
+        </div>
       </div>
       <div class="meta-group">
         <p class="meta-label">Tools</p>
-        <div class="meta-tags"><span class="tag">Clip Studio Paint</span></div>
+        <div class="meta-tags">
+          <span class="tag">Clip Studio Paint</span>
+        </div>
       </div>
     </div>
-    
+
+    <div class="section">
+      <h2 class="section-title">Final Design</h2>
+      <img src="content/Breath.png" alt="Breath Final Design" class="section-img" />
+    </div>
+
   </main>
 </body>
 </html>

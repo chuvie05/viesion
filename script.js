@@ -171,3 +171,13 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     });
   });
 });
+
+// SCROLL TO TOP BUTTON
+const scrollTopBtn = document.getElementById('scrollTop');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 400) {
+    scrollTopBtn.classList.add('visible');
+  } else {
+    scrollTopBtn.classList.remove('visible');
+  }
+}, { passive: true });
